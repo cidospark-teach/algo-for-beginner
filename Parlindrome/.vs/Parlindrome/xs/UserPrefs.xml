@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{0EB32003-F204-4663-93D7-49C44E1C2700}|Default">
+  <MonoDevelop.Ide.ItemProperties.Parlindrome PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Parlindrome/Program.cs">
+    <Files>
+      <File FileName="Parlindrome/Program.cs" Line="13" Column="50" />
+      <File FileName="Helper/Challenge.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Parlindrome" expanded="True">
+            <Node name="Helper" expanded="True" />
+            <Node name="Parlindrome" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
