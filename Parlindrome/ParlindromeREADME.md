@@ -1,6 +1,19 @@
-# algo-for-intermediate
-algorithm solutions techniques for beginners level
+# Parlindrome
+parlindrome is a word that can be spelt same way from right to left or left to right and still mean the same
 
+## Examples
+- WOW
+- MUM
+- DAD
+- etc
+
+## Technique used 
+Linear search (loop through the collection ones)
+
+## Time Complexity
+The time complexity for this solution resolves to O(n)/2. <br/>
+Instead of looping the full length to compare the characters, I looped half way comparing the first indexed character with it's last corresponding index.
+So in the loop I was comparing two opposite characters at once instead of one and that reduced the time it would normally take to go throught the full length.
 
 ## Get Started with this app.
 
