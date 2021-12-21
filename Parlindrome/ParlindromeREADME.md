@@ -5,7 +5,7 @@ parlindrome is a word that can be spelt same way from right to left or left to r
 - WOW
 - MUM
 - DAD
-- etc
+- TATTARRATTAT
 
 ## Technique used 
 Linear search (loop through the collection ones)
