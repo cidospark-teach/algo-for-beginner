@@ -1,3 +1,3 @@
-# algo-for-intermediate
+# algo-for-beginner
 algorithm solutions techniques for beginners level
 
