@@ -28,7 +28,6 @@ namespace SolutionLib
             if (searchTerm.Equals(list[list.Count - 1]))
                 return list[list.Count - 1];
 
-            return default(T);
 
             var listToCompare = new List<T>();
             listToCompare.Add(middleItem);
