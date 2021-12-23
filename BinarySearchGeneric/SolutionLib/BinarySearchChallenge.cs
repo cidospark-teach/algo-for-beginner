@@ -32,7 +32,7 @@ namespace SolutionLib
             var listToCompare = new List<T>();
             listToCompare.Add(middleItem);
             listToCompare.Add(searchTerm);
-            int comparison = CompareItems(new List<T>(listToCompare), middleItem);
+            int comparison = CompareItems(listToCompare, middleItem);
             List<T> sublist = null;
 
             // if middle item is less than search term then pick right side array range
