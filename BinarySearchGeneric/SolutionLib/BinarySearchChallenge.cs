@@ -5,10 +5,10 @@ namespace SolutionLib
 {
     public class BinarySearchChallenge
     {
-        public static T Search<T>(T[] arr, T searchTerm)
+        public static bool Search<T>(T[] arr, T searchTerm)
         {
             if (arr.Length < 1 || arr.Length == 1 && !arr[0].Equals(searchTerm))
-                return default(T);
+                return false;
 
             // convert arr into list and sort
             var list = new List<T>(arr);
@@ -17,16 +17,12 @@ namespace SolutionLib
             // get the middle index
             int middleIndex = list.Count / 2;
 
-            // check if search term == middle item
+            // check if search term == middle item or first item or last item
             var middleItem = list[middleIndex];
-            if (middleItem.Equals(searchTerm))
-                return middleItem;
-
-            // check if item is the first or last
-            if (searchTerm.Equals(list[0]))
-                return list[0];
-            if (searchTerm.Equals(list[list.Count - 1]))
-                return list[list.Count - 1];
+            if (middleItem.Equals(searchTerm) && list.Count > 2
+                || searchTerm.Equals(list[0])
+                || (searchTerm.Equals(list[list.Count - 1]) && list.Count - 1 != 0))
+                return true;
 
 
             var listToCompare = new List<T>();
@@ -55,10 +51,8 @@ namespace SolutionLib
             items.Sort();
             if (middleItem.Equals(items[0]))
                 return 1; // means less
-            else if (middleItem.Equals(items[1]))
-                return 2; // means greater
             else
-                return 0; // means equals
+                return 2; // means greater
 
         }
     }
