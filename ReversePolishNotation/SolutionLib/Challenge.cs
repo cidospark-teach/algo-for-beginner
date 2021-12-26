@@ -12,7 +12,7 @@ namespace SolutionLib
                 return 0.0;
 
             // split string expression to get each character to evaluate
-            var splittedStr = str.Split(" ");
+            var splittedStr = str.Trim().Split(" ");
 
             var result = new List<double>();
 
@@ -32,24 +32,33 @@ namespace SolutionLib
                     try
                     {
                         // make sure items in the result is is more that one before evaluating the last two
-                        if(result.Count >= 1)
+                        if(result.Count >= 2)
                         {
                             // get the last two items in result list
-                            var lastResultItem = result[result.Count - 1];
                             var penUltimateItem = result[result.Count - 2];
+                            var lastResultItem = result[result.Count - 1];
 
                             // evaluate the last two items
-                            var evaluation = Calc(lastResultItem, penUltimateItem, Convert.ToChar(item));
+                            var evaluation = Calc(penUltimateItem, lastResultItem, Convert.ToChar(item));
 
                             // remove the last two evaluated items and add their evaluation
                             result.Remove(lastResultItem);
                             result.Remove(penUltimateItem);
                             result.Add(evaluation);
                         }
+                        else
+                        {
+                            var lastResultItem = result[result.Count - 1];
+                            var evaluation = Calc(0, lastResultItem, Convert.ToChar(item));
+
+                            result.Remove(lastResultItem);
+                            result.Add(evaluation);
+
+                        }
                     }
                     catch
                     {
-                        throw new Exception("Invalid");
+                        throw new Exception("Invalid! expects space between number and operator");
                     }
                 }
             }
