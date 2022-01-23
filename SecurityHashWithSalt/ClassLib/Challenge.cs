@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace ClassLib
 {
@@ -9,7 +11,17 @@ namespace ClassLib
             byte[] strHash;
             byte[] strSalt;
 
-            return new HashResult();
+            using (var hash = new HMACSHA512())
+            {
+                strSalt = hash.Key;
+                strHash = hash.ComputeHash(Encoding.ASCII.GetBytes(str));
+            }
+
+            var result = new HashResult();
+            result.Salt = strSalt;
+            result.HashValue = strHash;
+
+            return result;
         }
 
         public class HashResult
