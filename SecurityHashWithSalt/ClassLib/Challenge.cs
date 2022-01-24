@@ -29,5 +29,21 @@ namespace ClassLib
             public byte[] Salt { get; set; }
             public byte[] HashValue { get; set; }
         }
+
+        public bool CompareHash(string str, byte[] strHash, byte[] strSalt)
+        {
+            using(var hash = new HMACSHA512(strSalt))
+            {
+                var genHash = hash.ComputeHash(Encoding.ASCII.GetBytes(str));
+                for(int i = 0; i < genHash.Length; i++)
+                {
+                    if (genHash[i] != strHash[i])
+                        return false;
+                }
+            }
+
+            return true;
+        }
+
     }
 }
